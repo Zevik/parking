@@ -1,0 +1,18 @@
+{
+  "name": "jerusalem-protected-parking",
+  "version": "1.0.0",
+  "description": "Jerusalem Protected Parking Garages Information System",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "preview": "npx vite preview"
+  },
+  "keywords": ["jerusalem", "parking", "emergency", "hebrew"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "type": "module"
+}
