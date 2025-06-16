@@ -88,7 +88,18 @@ function updateStatisticsUI() {
 function initMap() {
     try {
         // Create map centered on Jerusalem
-        map = L.map('map').setView([31.7857, 35.2007], 13);
+        map = L.map('map', {
+            scrollWheelZoom: false // Disable scroll wheel zoom by default
+        }).setView([31.7857, 35.2007], 13);
+        
+        // Enable scroll wheel zoom only when map is focused
+        map.on('focus', () => {
+            map.scrollWheelZoom.enable();
+        });
+        
+        map.on('blur', () => {
+            map.scrollWheelZoom.disable();
+        });
         
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
