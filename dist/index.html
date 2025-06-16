@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חניונים מוגנים בירושלים</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+  <link rel="stylesheet" crossorigin href="/assets/index-9s1Atu9V.css">
+</head>
+<body>
+    <div class="container-wrapper">
+        <header class="main-header">
+            <h1>חניונים מוגנים בירושלים</h1>
+            <p>מערכת מידע להצגת חניונים מוגנים תת-קרקעיים ברחבי העיר</p>
+        </header>
+
+        <main class="main-content">
+            <!-- פאנל עליון -->
+            <div class="top-panel">
+                <div class="welcome-section">
+                    <h2>ברוכים הבאים</h2>
+                    <p>מערכת זו מציגה את כל החניונים המוגנים בירושלים למקרה חירום</p>
+                </div>
+
+                <div class="stats-section">
+                    <h3>סטטיסטיקה</h3>
+                    <div class="stat-cards">
+                        <div class="stat-card">
+                            <div class="stat-number" id="total-garages">45</div>
+                            <div class="stat-label">חניונים</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="total-neighborhoods">14</div>
+                            <div class="stat-label">שכונות</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="avg-floors">2.7</div>
+                            <div class="stat-label">קומות בממוצע</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h4>התפלגות לפי שכונות</h4>
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1750100968/pplx_code_interpreter/c6a90632_fecgpa.jpg" alt="התפלגות החניונים המוגנים בירושלים לפי שכונות" class="neighborhood-chart">
+                    </div>
+                </div>
+
+                <div class="search-section">
+                    <h3>חיפוש וסינון</h3>
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="חיפוש לפי שם או כתובת...">
+                        <button id="search-clear" class="btn btn--secondary">נקה</button>
+                    </div>
+                    <div class="filter-neighborhood">
+                        <label for="neighborhood-select" class="form-label">סנן לפי שכונה:</label>
+                        <select id="neighborhood-select" class="form-control">
+                            <option value="">כל השכונות</option>
+                            <!-- האפשרויות יתווספו דינמית בקוד JavaScript -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="garage-list-section">
+                    <h3>רשימת חניונים <span id="results-count"></span></h3>
+                    <div class="garage-list" id="garage-list">
+                        <!-- כרטיסי החניונים יתווספו דינמית -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- מפה אינטרקטיבית בתחתית -->
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>© 2025 מערכת חניונים מוגנים - עיריית ירושלים</p>
+        </footer>
+    </div>
+    
+    <!-- Leaflet JavaScript - Load before our script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script src="app.js"></script>
+</body>
+</html>
